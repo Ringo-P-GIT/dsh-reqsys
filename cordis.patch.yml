@@ -1,0 +1,12 @@
+# ============================================================================
+# dsh-reqsys 的 bundle patch —— 把需求管理系统挂进 DSH 配置树
+# ============================================================================
+# 独立插件声明：host 半侧 lib/index.js 注册 /dsh-reqsys/ 前缀路由，
+# client 半侧由 DSH 模块系统扫描（package.json 的 dsh.client）提供 /plugins/dsh-reqsys/client.js。
+# 双击宠物唤醒：client.js 内通过 DOM 桥接捕获 dsh-pet 容器上的 dblclick 事件。
+# ============================================================================
+
+- insert:
+    - id: reqsys                     # 插件行 id（唯一）
+      name: 'dsh-reqsys'             # 模块名：解析到 lib/index.js
+      config: {}                     # host 半侧暂无需配置
